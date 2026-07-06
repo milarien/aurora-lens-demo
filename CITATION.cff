@@ -23,7 +23,7 @@ keywords:
   - LLM governance
   - Aurora-Lens
 
-license: "AGPL-3.0-or-later"
+license: license: "LicenseRef-Aurora-Lens-Demo-Evaluation-1.0"
 
 repository-code: "https://github.com/milarien/aurora-lens-demo"
 url: "https://aurora-lens.ai"
