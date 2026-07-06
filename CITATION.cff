@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use or refer to this software, please cite it as below."
+title: "Aurora-Lens Demo: Evidence Authority and Runtime Admissibility Governance"
+type: software
+
+authors:
+  - family-names: "Stokes"
+    given-names: "Margaret"
+    orcid: "https://orcid.org/0009-0004-6422-4174"
+
+abstract: >
+  Aurora-Lens Demo is a bounded, runnable demonstration of runtime admissibility
+  governance for AI outputs. It demonstrates evidence authority demotion,
+  freshness-aware decision blocking, and audit-record generation before model
+  output becomes consequential.
+
+keywords:
+  - AI governance
+  - admissibility
+  - runtime governance
+  - evidence authority
+  - audit ledger
+  - LLM governance
+  - Aurora-Lens
+
+license: "AGPL-3.0-or-later"
+
+repository-code: "https://github.com/milarien/aurora-lens-demo"
+url: "https://aurora-lens.ai"
+
+version: "0.1.0"
+date-released: "2026-07-06"
+
+preferred-citation:
+  type: software
+  title: "Aurora-Lens Demo: Evidence Authority and Runtime Admissibility Governance"
+  authors:
+    - family-names: "Stokes"
+      given-names: "Margaret"
+      orcid: "https://orcid.org/0009-0004-6422-4174"
+  version: "0.1.0"
+  date-released: "2026-07-06"
+  repository-code: "https://github.com/milarien/aurora-lens-demo"
+  url: "https://aurora-lens.ai"
+  license: "AGPL-3.0-or-later"
