@@ -6,3 +6,10 @@ __pycache__/
 dist/
 build/
 *.egg-info/
+.env
+.env.*
+.claude/
+.vscode/
+.idea/
+.DS_Store
+audit/

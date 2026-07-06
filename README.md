@@ -20,7 +20,7 @@ Demoted evidence does not disappear. It becomes a contextual signal, but it can 
 ## Run it
 
 ```
-pip install -e .
+pip install -e ".[dev]"
 python -m aurora_lens_demo.demo
 python -m pytest -q
 ```

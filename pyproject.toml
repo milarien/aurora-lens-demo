@@ -11,6 +11,9 @@ requires-python = ">=3.12,<3.13"
 license = { text = "AGPL-3.0-or-later" }
 authors = [{ name = "Margaret Stokes" }]
 
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
