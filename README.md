@@ -35,17 +35,26 @@ python -m aurora_lens_demo.demo
 
 ## Expected Demo Output
 
-Running the demo will show four cases of evidence evaluation, each demonstrating a different authority state and its corresponding mapped outcome.
+Running the demo will show a human-readable scenario walkthrough followed by audit-style JSON records.
 
-```json
-{
-  "evidence_id": "ev-001",
-  "authority_state": "authoritative",
-  "freshness_status": "current",
-  "authority_status": "verified",
-  "demotion_reason": null,
-  "mapped_action": "PASS"
-}
+```text
+Aurora-Lens Demo
+Evidence Authority Demotion
+
+...
+
+CASE 1 — Authoritative evidence
+Evidence: Maintenance certificate MC-001
+Freshness: current
+Authority: verified
+Decision: The evidence may support the decision.
+Mapped action: PASS
+
+...
+
+Audit-style records:
+{"authority_state": "authoritative", "authority_status": "verified", "demotion_reason": null, "evidence_id": "MC-001", "freshness_status": "current", "mapped_action": "PASS"}
+...
 ```
 
 ## Test Command
