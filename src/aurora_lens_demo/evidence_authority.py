@@ -76,9 +76,14 @@ def evaluate_evidence(evidence: EvidenceInput) -> AdmissibilityResult:
     elif evidence.authority_status == "unverified":
         state = AuthorityState.SIGNAL_ONLY
         reason = "Evidence is unverified; demoted to contextual signal only."
-    else:
+    elif evidence.freshness_status == "current" and evidence.authority_status == "verified":
         state = AuthorityState.AUTHORITATIVE
         reason = None
+    else:
+        raise ValueError(
+            f"Unrecognised evidence input: freshness={evidence.freshness_status!r}, "
+            f"authority={evidence.authority_status!r}"
+        )
 
     return AdmissibilityResult(
         evidence_id=evidence.evidence_id,
