@@ -1,17 +1,50 @@
-GNU AFFERO GENERAL PUBLIC LICENSE
-Version 3, 19 November 2007
+Aurora-Lens Demo Evaluation License
+Version 1.0
 
-Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+Copyright © 2026 Margaret Stokes. All rights reserved.
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as
-published by the Free Software Foundation, either version 3 of the
-License, or (at your option) any later version.
+This repository is made publicly available for inspection, citation,
+academic discussion, technical evaluation, and demonstration of the
+Aurora-Lens runtime admissibility governance architecture.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU Affero General Public License for more details.
+Permission is granted to view, clone, and run this repository solely for
+personal, academic, research, review, or evaluation purposes.
 
-You should have received a copy of the GNU Affero General Public License
-along with this program. If not, see <https://www.gnu.org/licenses/agpl-3.0.html>.
+No permission is granted to:
+
+1. use this software or any substantial part of it in commercial products,
+   commercial services, hosted services, internal enterprise systems, client
+   work, consulting deliverables, or production environments;
+
+2. redistribute, sublicense, sell, rent, lease, package, publish, mirror, or
+   re-host this software or modified versions of it;
+
+3. create derivative works for public distribution or commercial use;
+
+4. remove or alter authorship, copyright, provenance, citation, patent,
+   or notice information;
+
+5. represent this software, architecture, terminology, audit method, or
+   admissibility-governance design as originating from any person or entity
+   other than Margaret Stokes;
+
+6. use the names Aurora, Aurora-Lens, Lens, PEF, Persistent Existence Frame,
+   or related project names as product, service, company, model, framework,
+   or repository names without written permission.
+
+The software is provided for demonstration and evaluation only.
+
+Patent, trademark, commercial licensing, acquisition, and production-use
+rights are not granted by this license. Such rights require a separate
+written agreement with Margaret Stokes.
+
+This software is provided "as is", without warranty of any kind, express
+or implied, including but not limited to warranties of merchantability,
+fitness for a particular purpose, non-infringement, accuracy, reliability,
+or suitability for any operational, legal, medical, financial, safety,
+or compliance use.
+
+For commercial licensing, acquisition, or other permissions, contact
+Margaret Stokes via:
+
+https://aurora-lens.ai
