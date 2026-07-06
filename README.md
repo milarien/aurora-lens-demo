@@ -1,70 +1,34 @@
-# Aurora-Lens Demo
+# Aurora-Lens: Evidence Authority Demo
 
-This repository is a limited public demonstration of one Aurora-Lens governance behaviour: demotion of stale or insufficiently authorised evidence from consequence-bearing authority to contextual signal.
+Aurora-Lens governs AI systems at the execution boundary. Nothing becomes a consequence until it clears admissibility. This repository demonstrates one behaviour: **evidence that is stale, expired, or revoked cannot carry decision authority**.
 
-It is not the full Aurora-Lens architecture.
+A live interactive demo is available at [aurora-lens.ai/demo](https://aurora-lens.ai/demo).
 
-It does not include the full PEF substrate, full Lens/Governor runtime, production audit system, corpus layer, deployment system, or commercial implementation.
+## The behaviour
 
-The purpose of this repository is to make one bounded admissibility behaviour inspectable and testable.
+Before a decision is authorised to proceed, Aurora-Lens classifies the evidence behind it:
 
-## What This Demo Shows
+| Evidence state | Authority | Lens action |
+|---|---|---|
+| Current, verified | Authoritative | `PASS` |
+| Stale | Signal only; decision must be revised | `FORCE_REVISE` |
+| Expired | Held until revalidated | `CONTAIN` |
+| Revoked | Inadmissible | `HARD_STOP` |
 
-- Evidence enters an admissibility evaluation.
-- Evidence is classified into one of four authority states: `authoritative`, `signal_only`, `requires_revalidation`, or `inadmissible`.
-- These states map to Lens outcomes: `PASS`, `FORCE_REVISE`, `CONTAIN`, or `HARD_STOP`.
-- Stale or insufficiently authorised evidence is demoted from authority to signal.
-- A minimal audit-style record is emitted for each evaluation.
+Demoted evidence does not disappear. It becomes a contextual signal, but it can no longer drive the decision.
 
-## What This Demo Does Not Include
+## Run it
 
-- Full PEF state substrate or persistence
-- Production Lens/Governor runtime orchestration
-- Real corpus layer or evidence registries
-- Production policy engine or private rule taxonomies
-- Commercial audit schemas or cryptographic chain-of-custody
-
-## Quickstart (Windows PowerShell)
-
-```powershell
-cd aurora-lens-demo
-python -m compileall src tests -q
-python -m pytest -q
+```
+pip install -e .
 python -m aurora_lens_demo.demo
-```
-
-## Expected Demo Output
-
-Running the demo will show a human-readable scenario walkthrough followed by audit-style JSON records.
-
-```text
-Aurora-Lens Demo
-Evidence Authority Demotion
-
-...
-
-CASE 1 — Authoritative evidence
-Evidence: Maintenance certificate MC-001
-Freshness: current
-Authority: verified
-Decision: The evidence may support the decision.
-Mapped action: PASS
-
-...
-
-Audit-style records:
-{"authority_state": "authoritative", "authority_status": "verified", "demotion_reason": null, "evidence_id": "MC-001", "freshness_status": "current", "mapped_action": "PASS"}
-...
-```
-
-## Test Command
-
-```powershell
 python -m pytest -q
 ```
 
-## Authorship
+Requires Python 3.12.
 
-Aurora-Lens was authored by Margaret Stokes.
+## Scope
 
-This demo is provided for inspection and evaluation of the bounded behaviour only.
+This is a bounded public demonstration of one admissibility behaviour. The full Aurora-Lens runtime is not included.
+
+Authored by Margaret Stokes.
