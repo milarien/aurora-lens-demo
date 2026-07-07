@@ -1,3 +1,5 @@
+import pytest
+
 from aurora_lens_demo.evidence_authority import (
     AuthorityState,
     EvidenceInput,
@@ -64,6 +66,26 @@ def test_unverified_evidence_maps_to_force_revise() -> None:
     assert result.authority_state == AuthorityState.SIGNAL_ONLY
     assert result.mapped_action == LensAction.FORCE_REVISE
     assert "unverified" in result.demotion_reason.lower()
+
+
+def test_unknown_freshness_status_fails_closed() -> None:
+    evidence = EvidenceInput(
+        evidence_id="BAD-001",
+        freshness_status="currrent",
+        authority_status="verified",
+    )
+    with pytest.raises(ValueError, match="Unrecognised evidence input"):
+        evaluate_evidence(evidence)
+
+
+def test_unknown_authority_status_fails_closed() -> None:
+    evidence = EvidenceInput(
+        evidence_id="BAD-002",
+        freshness_status="current",
+        authority_status="verifed",
+    )
+    with pytest.raises(ValueError, match="Unrecognised evidence input"):
+        evaluate_evidence(evidence)
 
 
 def test_audit_records_contain_required_fields() -> None:
