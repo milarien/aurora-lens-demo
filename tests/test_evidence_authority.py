@@ -68,24 +68,30 @@ def test_unverified_evidence_maps_to_force_revise() -> None:
     assert "unverified" in result.demotion_reason.lower()
 
 
-def test_unknown_freshness_status_fails_closed() -> None:
+def test_typo_in_freshness_status_fails_closed() -> None:
     evidence = EvidenceInput(
         evidence_id="BAD-001",
         freshness_status="currrent",
         authority_status="verified",
     )
-    with pytest.raises(ValueError, match="Unrecognised evidence input"):
+    with pytest.raises(ValueError, match="Unrecognised evidence input") as exc_info:
         evaluate_evidence(evidence)
+    message = str(exc_info.value)
+    assert "currrent" in message
+    assert "verified" in message
 
 
-def test_unknown_authority_status_fails_closed() -> None:
+def test_typo_in_authority_status_fails_closed() -> None:
     evidence = EvidenceInput(
         evidence_id="BAD-002",
         freshness_status="current",
         authority_status="verifed",
     )
-    with pytest.raises(ValueError, match="Unrecognised evidence input"):
+    with pytest.raises(ValueError, match="Unrecognised evidence input") as exc_info:
         evaluate_evidence(evidence)
+    message = str(exc_info.value)
+    assert "current" in message
+    assert "verifed" in message
 
 
 def test_audit_records_contain_required_fields() -> None:
