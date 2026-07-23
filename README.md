@@ -41,9 +41,11 @@ The interactive demo demonstrates:
 - audit and verification surfaces
 - model output treated as a non-authoritative candidate
 
-## Local CLI Walkthrough
+## Local Evidence Walkthrough
 
-A separate pedagogical CLI provides synthetic, deterministic walkthroughs of selected governance behaviours.
+This repository also includes a small, self-contained Python demonstration of selected evidence-authority behaviours using synthetic cases.
+
+From a clone of this repository:
 
 ```bash
 pip install -e ".[dev]"
@@ -51,9 +53,11 @@ python -m aurora_lens_demo.demo
 python -m pytest -q
 ```
 
-Requires Python 3.12.
+Python 3.12 is required.
 
-The CLI does not call the hosted API and does not include the production engine.
+The walkthrough demonstrates how selected evidence states, including current, stale, expired, and revoked evidence, produce governance outcomes such as PASS, FORCE_REVISE, CONTAIN, and HARD_STOP.
+
+It installs only the public demo package and its development dependencies. It does not provide the production Aurora-Lens runtime, the private runtime package, or unrestricted access to the hosted service.
 
 ## Repository Boundaries
 
