@@ -1,34 +1,41 @@
-# Aurora-Lens: Evidence Authority Demo
+# Aurora-Lens public demo
 
-Aurora-Lens governs AI systems at the execution boundary. Nothing becomes a consequence until it clears admissibility. This repository demonstrates one behaviour: **evidence that is stale, expired, or revoked cannot carry decision authority**.
+Bounded public demonstration surfaces for Aurora-Lens. This repository is **not** the production Aurora-Lens runtime.
 
-A live interactive demo is available at [aurora-lens.ai/demo](https://aurora-lens.ai/demo).
+## Interactive demo (this deployment)
 
-## The behaviour
+The **root** of this repository / GitHub Pages deployment is the full interactive demo:
 
-Before a decision is authorised to proceed, Aurora-Lens classifies the evidence behind it:
+- Open the hosted demo at the repository Pages URL (root `/` → `index.html`).
+- Or open `index.html` locally with any static file server (or your browser).
 
-| Evidence state | Authority | Lens action |
-|---|---|---|
-| Current, verified | Authoritative | `PASS` |
-| Stale | Signal only; decision must be revised | `FORCE_REVISE` |
-| Expired | Held until revalidated | `CONTAIN` |
-| Revoked | Inadmissible | `HARD_STOP` |
+Evaluations call Margaret’s **capacity-bounded** public API at:
 
-Demoted evidence does not disappear. It becomes a contextual signal, but it can no longer drive the decision.
+`https://aurora-lens.ai/v1/...`
 
-## Run it
+That API is intentionally rate- and capacity-limited. Service capacity may occasionally be exhausted (`429`); wait and try again, or start a new demo session.
 
-```
+This client does **not** include:
+
+- production Aurora-Lens source
+- a private runtime wheel
+- Railway or other private origins
+- local evaluation backends
+
+**Cloning this repository does not grant production source, unrestricted API access, or a licence to the private runtime.**
+
+## CLI evidence walkthrough (local)
+
+A separate pedagogical CLI demonstrates evidence-authority demotion on synthetic cases:
+
+```bash
 pip install -e ".[dev]"
 python -m aurora_lens_demo.demo
 python -m pytest -q
 ```
 
-Requires Python 3.12.
+Requires Python 3.12. The CLI does not call the hosted API and does not ship the production engine.
 
 ## Scope
 
-This is a bounded public demonstration of one admissibility behaviour. The full Aurora-Lens runtime is not included.
-
-Authored by Margaret Stokes.
+Authored by Margaret Stokes. Marketing and product pages live at [aurora-lens.ai](https://aurora-lens.ai).
